@@ -1,3 +1,7 @@
+
+Link to game: lucas-mansion.pushed.nz  ---  You may need to zoom in/out before playing.
+
+
 # Boilerplate: Fullstack with Sass
 
 ## Setup
