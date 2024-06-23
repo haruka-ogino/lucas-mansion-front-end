@@ -6,7 +6,7 @@
 
 This project was created while at Dev Academy, as our final group project. Our goal was to develop a virtual escape room experience within a web browser, complete with engaging puzzles and games.
 
-"Lucas the Mouse," a beloved running joke throughout our bootcamp. In honor of Lucas, we named our final group project after him.
+"Lucas the Mouse" was a running joke throughout our bootcamp. We named our final group project in his honour.
 
 ### Goals
 
