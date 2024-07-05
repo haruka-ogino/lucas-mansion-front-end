@@ -1,11 +1,7 @@
-//
 import express from 'express'
-import * as Path from 'path' // Use 'path' instead of 'node:path' in newer versions
+import * as Path from 'path'
 
 import leaderboardRoutes from './routes/leaderboard'
-
-// Import Turso client
-// import { turso } from './db/connection'
 
 const server = express()
 
