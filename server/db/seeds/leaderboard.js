@@ -9,6 +9,6 @@ export async function seed(knex) {
     { id: 3, name: 'PRASH', time: 1276 },
     { id: 4, name: 'HARUKA', time: 1372 },
     { id: 5, name: 'DARRAGH', time: 1382 },
-    { id: 6, name: 'KODA', time: 1320 },
+    { id: 6, name: 'MOA', time: 1320 },
   ])
 }

@@ -1,14 +1,21 @@
+//
 import express from 'express'
-import * as Path from 'node:path'
+import * as Path from 'path' // Use 'path' instead of 'node:path' in newer versions
 
-import leaderboardRoutes from './routes/leaderboard.ts'
+import leaderboardRoutes from './routes/leaderboard'
+
+// Import Turso client
+// import { turso } from './db/connection'
 
 const server = express()
 
+// Middleware to parse JSON request bodies
 server.use(express.json())
 
+// Use leaderboard routes
 server.use('/api/v1/leaderboard', leaderboardRoutes)
 
+// Serve static assets and index.html in production
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
   server.use('/assets', express.static(Path.resolve('./dist/assets')))
