@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
-    "@libsql/client": "^0.5.6",
+    "@libsql/client": "^0.7.0",
     "dotenv": "^16.4.5",
     "express": "^4.17.2",
     "express-jwt": "^8.4.1",
