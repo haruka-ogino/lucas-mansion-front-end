@@ -15,7 +15,7 @@ This project was created while at Dev Academy, as our final group project. Our g
 * Incoorporate a different bakcground song for each setting, as well as sounds for different items.
 * Incoorporate a timer.
 * Include a leaderboard.
-* [Deploy app](https://lucas-mansion.pushed.nz)
+* [Deploy app](https://lucas-mansion.vercel.app)
 
 ### Methods used
 
