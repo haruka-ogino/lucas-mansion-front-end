@@ -15,7 +15,7 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
   if (isLoading) return <h1>Loading...</h1>
   if (isError) return <h1>Sorry you are experiencing an error</h1>
   if (scores) {
-    console.log(scores)
+    // console.log(scores)
     return (
       <>
         <h1

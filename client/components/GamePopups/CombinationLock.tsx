@@ -12,8 +12,8 @@ interface Props {
   setVolume: React.Dispatch<React.SetStateAction<number>>
   timer: number
   jigsawWin: boolean
-  setExit:React.Dispatch<React.SetStateAction<boolean>>
-  setStopper:React.Dispatch<React.SetStateAction<boolean>>
+  setExit: React.Dispatch<React.SetStateAction<boolean>>
+  setStopper: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function CombinationLock({
@@ -21,7 +21,7 @@ export default function CombinationLock({
   setVolume,
   jigsawWin,
   setExit,
-  setStopper
+  setStopper,
 }: Props) {
   const navigate = useNavigate()
   const [pin1, setPin1] = useState(0)
@@ -30,13 +30,13 @@ export default function CombinationLock({
   const [pin4, setPin4] = useState(0)
   const sound = new Audio(unlock)
 
-  function foyerMove(){
+  function foyerMove() {
     sound.play()
     setVolume(0)
     navigate(`/Foyer`)
   }
 
-  function stopLock(){
+  function stopLock() {
     setExit(true)
     setLockNum(false)
     setStopper(true)
@@ -44,13 +44,9 @@ export default function CombinationLock({
 
   function handleSubmit() {
     if (pin1 === 3 && pin2 === 5 && pin3 === 9 && pin4 === 0) {
-      jigsawWin ? (
-        foyerMove()
-     ) : (
-      stopLock()
-      )
+      jigsawWin ? foyerMove() : stopLock()
     } else {
-      console.log('Try Again')
+      // console.log('Try Again')
       setExit(false)
     }
   }

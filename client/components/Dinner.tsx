@@ -38,6 +38,7 @@ import '../styles/popup.css'
 import '../styles/dinner.css'
 import { useNavigate } from 'react-router-dom'
 import Stopper from './CluePopups/Stopper'
+import { useLeaderboard } from '../hooks/useLeaderboard'
 
 export default function Dinner() {
   const [block, setBlock] = useState(true)
@@ -263,7 +264,7 @@ export default function Dinner() {
       <button
         className="clue clockbod"
         onClick={() => {
-          (!matchingWin && lockedClock.play()), setClock(true)
+          !matchingWin && lockedClock.play(), setClock(true)
         }}
       >
         <img
@@ -522,7 +523,24 @@ export default function Dinner() {
           alt="frame with map"
         />
       </button>
-      <button style={{border:"none", background:"none"}} onClick={()=>{muteAudio ? setMuteAudio(false):setMuteAudio(true)}}><img src={muteAudio? "/mute-on.png":"/mute-off.png"} alt="mute button" style={{position:"absolute", top:"20px", left:"20px", width:"70px", height:"auto"}}/></button>
+      <button
+        style={{ border: 'none', background: 'none' }}
+        onClick={() => {
+          muteAudio ? setMuteAudio(false) : setMuteAudio(true)
+        }}
+      >
+        <img
+          src={muteAudio ? '/mute-on.png' : '/mute-off.png'}
+          alt="mute button"
+          style={{
+            position: 'absolute',
+            top: '20px',
+            left: '20px',
+            width: '70px',
+            height: 'auto',
+          }}
+        />
+      </button>
     </div>
   )
 }

@@ -9,7 +9,7 @@ export default function Timer() {
   const dinnerTimer = setTimeout(() => {
     if (location.pathname !== '/') {
       setTimer(1 + timer)
-      console.log(timer)
+      // console.log(timer)
     }
   }, 1000)
   if (location.pathname === '/end-page') {

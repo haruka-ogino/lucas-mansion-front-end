@@ -51,7 +51,6 @@ export default function Matching({ setMatching, win, setWin }: Props) {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] !== correctAns[i]) {
         winState = false
-        console.log('not a win')
       }
     }
     setWin(winState)

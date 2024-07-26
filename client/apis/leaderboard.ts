@@ -1,8 +1,7 @@
 import request from 'superagent'
 import { ScoreDraft } from '../../models/scores'
 
-const rootUrl = '/api/v1'
-
+const rootUrl = 'https://lucas-mansion-server.vercel.app'
 export function getLeaderboard() {
   try {
     return request.get(rootUrl + '/leaderboard').then((res) => {

@@ -28,7 +28,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
     setClickedPiece(pieces[index])
   }
 
-  console.log(clickedPiece)
+  // console.log(clickedPiece)
 
   function handleClickBoard(index: number): void {
     // removing img selected from option
@@ -44,7 +44,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
     }
   }
 
-  console.log(placedPieces)
+  // console.log(placedPieces)
 
   function checkWin() {
     let isWin = true
@@ -53,7 +53,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
     for (let i = 0; i < placedPieces.length; i++) {
       if (placedPieces[i] !== correctAns[i]) {
         isWin = false
-        console.log('not a win')
+        // console.log('not a win')
         break
       }
     }
@@ -70,8 +70,8 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
       tapeSound.play()
     }
 
-    if (isWin === true) console.log(`you win! - ${isWin}`)
-    if (isWin === false) console.log(`not right :( - ${isWin}`)
+    // if (isWin === true) console.log(`you win! - ${isWin}`)
+    // if (isWin === false) console.log(`not right :( - ${isWin}`)
   }
 
   function handleRotation(index: number): void {
@@ -79,10 +79,6 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
     newRotatedPieces[index] = rotationStates[index] + 90
     setRotationStates(newRotatedPieces)
   }
-
-  console.log(rotationStates)
-
-  console.log(win)
 
   const paperSound = new Audio(paper)
 
@@ -102,7 +98,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
                 src="/puzzle-images/entrance-empty.png"
                 alt="button-0"
                 onClick={() => handleClickBoard(0)}
-                className={clickedPiece === "" ? "" : "selected"}
+                className={clickedPiece === '' ? '' : 'selected'}
               />
             </div>
           ) : placedPieces[0] === correctAns[0] ? (
@@ -138,7 +134,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
                 src="/puzzle-images/corner1-empty.png"
                 alt="button-1"
                 onClick={() => handleClickBoard(1)}
-                className={clickedPiece === "" ? "" : "selected"}
+                className={clickedPiece === '' ? '' : 'selected'}
               />
             </div>
           ) : placedPieces[1] === correctAns[0] ? (
@@ -173,7 +169,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
                 src="/puzzle-images/exit-empty.png"
                 alt="button-2"
                 onClick={() => handleClickBoard(2)}
-                className={clickedPiece === "" ? "" : "selected"}
+                className={clickedPiece === '' ? '' : 'selected'}
               />
             </div>
           ) : placedPieces[2] === correctAns[0] ? (
