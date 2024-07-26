@@ -1,8 +1,8 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react'
 import pathing from '../data/Maze.json'
 import { useNavigate } from 'react-router-dom'
-import Map from './GamePopups/Map'
 import '../styles/maze.css'
 
 //audio:
@@ -20,7 +20,7 @@ export default function Maze() {
 
   const random = ['running-soundscape', 'running-in-the-woods']
 
-  function getRandomNumber(min, max) {
+  function getRandomNumber(min: number, max: number) {
     min = Math.ceil(min)
     max = Math.floor(max)
     return Math.floor(Math.random() * (max - min + 1)) + min
@@ -122,20 +122,50 @@ export default function Maze() {
             </button>
           )
         )}
-        <button className='map' onClick={()=>{setMap(true), paperSound.play()}}><img className="mapImage" src="/maze/mapIcon.png" alt="map icon"/></button>
+        <button
+          className="map"
+          onClick={() => {
+            setMap(true), paperSound.play()
+          }}
+        >
+          <img className="mapImage" src="/maze/mapIcon.png" alt="map icon" />
+        </button>
         {map && (
-        <div className="popup-overlay">
+          <div className="popup-overlay">
+            <img
+              src="/puzzle-images/full_map_checkpoint.png"
+              alt="maze-map"
+              style={{ height: '500px' }}
+            />
+            <button
+              className="close"
+              style={{ position: 'absolute', right: '510px', top: '205px' }}
+              onClick={() => {
+                setMap(false), paperSound.play()
+              }}
+            >
+              x
+            </button>
+          </div>
+        )}
+        <button
+          style={{ border: 'none', background: 'none' }}
+          onClick={() => {
+            muteAudio ? setMuteAudio(false) : setMuteAudio(true)
+          }}
+        >
           <img
-            src="/puzzle-images/full_map_checkpoint.png"
-            alt="maze-map"
-            style={{ height: '500px' }}
+            src={muteAudio ? '/mute-on-maze.png' : '/mute-off-maze.png'}
+            alt="mute button"
+            style={{
+              position: 'absolute',
+              top: '20px',
+              left: '20px',
+              width: '70px',
+              height: 'auto',
+            }}
           />
-          <button className="close" style={{position:"absolute", right:"510px", top:"205px"}} onClick={() => {setMap(false), paperSound.play()}}>
-            x
-          </button>
-        </div>
-      )}
-      <button style={{border:"none", background:"none"}} onClick={()=>{muteAudio ? setMuteAudio(false):setMuteAudio(true)}}><img src={muteAudio? "/mute-on-maze.png":"/mute-off-maze.png"} alt="mute button" style={{position:"absolute", top:"20px", left:"20px", width:"70px", height:"auto"}}/></button>
+        </button>
       </>
     )
   }

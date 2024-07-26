@@ -1,9 +1,13 @@
-import knex from 'knex'
-import config from './knexfile.js'
+import { createClient } from '@libsql/client'
+import dotenv from 'dotenv'
+dotenv.config()
 
-type Environment = 'development' | 'production' | 'test'
-const env = (process.env.NODE_ENV as Environment) || 'development'
+// Initialise the Turso client
+const tursoDatabaseUrl = process.env.TURSO_DATABASE_URL as string
+const tursoAuthToken = process.env.TURSO_AUTH_TOKEN as string
 
-const connection = knex(config[env])
-
-export default connection
+// Initialise the Turso client
+export const turso = createClient({
+  url: tursoDatabaseUrl,
+  authToken: tursoAuthToken,
+})
