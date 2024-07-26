@@ -1,0 +1,14 @@
+.github {
+  background-color: #1b1102;
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Arial';
+  font-size: 22px;
+  color: aliceblue;
+  padding: 3px 4px;
+  border-radius: 10px;
+}

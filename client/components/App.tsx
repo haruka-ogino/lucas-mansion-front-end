@@ -6,6 +6,7 @@ import dinner from '/audio/dinner.mp3'
 import foyer from '/audio/foyer.mp3'
 import mazeSing from '/audio/maze-sing.mp3'
 import Timer from './Timer'
+import GitHub from './GitHub'
 
 function App() {
   const location = useLocation()
@@ -27,6 +28,7 @@ function App() {
   return (
     <>
       <div className="app">
+        <GitHub />
         {location.pathname !== '/end-page' && <Outlet />}
         <Timer />
       </div>
